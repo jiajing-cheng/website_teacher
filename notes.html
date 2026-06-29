@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教学札记 - 极简风家教介绍</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { max-width: var(--max-width); margin: 0 auto; padding: 80px 20px 40px; }
+        .page-title { font-size: clamp(32px, 4vw, 48px); font-weight: 700; margin-bottom: 16px; }
+        .page-desc { font-size: 18px; color: var(--color-text-sub); }
+
+        .notes-list { max-width: 800px; margin: 0 auto; padding: 0 20px 80px; display: flex; flex-direction: column; gap: 40px; }
+        @media (min-width: 768px) { .notes-list { padding: 0 40px 120px; } }
+
+        .note-item { border-bottom: 1px solid #EEEEEE; padding-bottom: 32px; }
+        .note-date { font-size: 14px; color: var(--color-text-sub); margin-bottom: 8px; font-weight: 600; }
+        .note-item h3 { font-size: 24px; margin-bottom: 12px; }
+        .note-item p { font-size: 16px; line-height: 1.8; color: var(--color-text-sub); }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <h1 class="page-title">📝 教学札记</h1>
+        <p class="page-desc">记录日常教学中的思考与感悟，分享极简教育理念下的真实课堂故事。</p>
+    </header>
+
+    <main class="notes-list">
+        <article class="note-item">
+            <div class="note-date">2023-10-24</div>
+            <h3>为什么我不建议学生盲目刷题？</h3>
+            <p>在近期的辅导中，我发现很多孩子陷入了“伪勤奋”的陷阱。每天熬夜做题，但成绩依然停滞不前。其实，学习的本质是建立知识网络，而不是机械记忆。今天这节课，我带着学生用思维导图重构了物理力学体系……</p>
+        </article>
+        <article class="note-item">
+            <div class="note-date">2023-10-15</div>
+            <h3>启发式提问：把思考的权利还给孩子</h3>
+            <p>当学生遇到难题时，我们最容易犯的错误就是直接给出答案。今天我尝试了“苏格拉底式提问”，连续问了三个“为什么”，虽然过程有些艰难，但当他自己推导出公式的那一刻，眼里的光是骗不了人的。</p>
+        </article>
+    </main>
+
+    <footer class="contact-footer">
+        <a href="index.html" class="btn btn-secondary">返回首页</a>
+    </footer>
+</body>
+</html>
