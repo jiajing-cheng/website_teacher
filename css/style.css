@@ -149,3 +149,28 @@ body {
 
 .contact-link:hover { background-color: #F0F0F0; }
 .contact-link svg { width: 24px; height: 24px; fill: currentColor; }
+
+/* =========================================
+   8. Hero 区函数动画背景
+   ========================================= */
+.hero {
+    position: relative; /* 为 Canvas 绝对定位提供基准 */
+    overflow: hidden;   /* 隐藏超出边界的线条 */
+}
+
+.hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;         /* 置于文字和图片底层 */
+    opacity: 0.15;      /* 保持极简风，降低线条透明度 */
+    pointer-events: none; /* 防止遮挡文字和按钮的点击 */
+}
+
+/* 确保动画背景上的文字和按钮在最上层 */
+.hero-content, .hero-image {
+    position: relative;
+    z-index: 1;
+}
