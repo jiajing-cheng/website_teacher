@@ -11,8 +11,6 @@
 
     <!-- 1. 首屏 Hero 区 -->
     <header class="hero">
-        <!-- 新增：函数动画画布 -->
-        <canvas id="hero-canvas" class="hero-canvas"></canvas>
         <div class="hero-content">
             <h1 class="hero-title">用启发式教育<br>点亮学习之路</h1>
             <p class="hero-subtitle">薛老师专注初中数学个性化辅导。拒绝题海战术，以极简的教学理念，帮助学生建立底层逻辑思维，养成终身学习习惯。</p>
@@ -24,6 +22,11 @@
             <img src="images/薛老师首页照片.jpg" alt="薛老师首页照片" loading="eager">
         </div>
     </header>
+
+    <!-- 新增：区块过渡函数动画 -->
+    <div class="wave-divider">
+        <canvas id="hero-canvas"></canvas>
+    </div>
 
     <!-- 2. 功能区 (3个卡片) -->
     <section class="features">
@@ -86,8 +89,8 @@
         ctx.lineWidth = 2;
         ctx.strokeStyle = '#111111'; // 线条颜色，可根据主题修改
 
-        const amplitude = 50 + mouseY * 50; // 鼠标Y轴控制波浪起伏
-        const frequency = 0.005 + mouseX * 0.01; // 鼠标X轴控制波浪密集度
+        const amplitude = 40 + mouseY * 50; // 鼠标Y轴控制波浪起伏
+        const frequency = 0.05 + mouseX * 0.1; // 鼠标X轴控制波浪密集度
         const speed = time * 0.002;
 
         for (let x = 0; x <= canvas.width; x++) {

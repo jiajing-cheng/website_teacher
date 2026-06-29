@@ -151,26 +151,22 @@ body {
 .contact-link svg { width: 24px; height: 24px; fill: currentColor; }
 
 /* =========================================
-   8. Hero 区函数动画背景
+   8. 区块过渡函数动画样式
    ========================================= */
-.hero {
-    position: relative; /* 为 Canvas 绝对定位提供基准 */
+.wave-divider {
+    position: relative;
+    width: 100%;
+    height: 150px;      /* 控制波浪区域的整体高度 */
     overflow: hidden;   /* 隐藏超出边界的线条 */
+    opacity: 0.15;      /* 保持极简风，降低线条透明度 */
+    pointer-events: none; /* 防止遮挡页面的正常点击 */
+    margin: 20px 0;     /* 与上下区块保持一点间距 */
 }
 
-.hero-canvas {
+.wave-divider canvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;         /* 置于文字和图片底层 */
-    opacity: 0.15;      /* 保持极简风，降低线条透明度 */
-    pointer-events: none; /* 防止遮挡文字和按钮的点击 */
-}
-
-/* 确保动画背景上的文字和按钮在最上层 */
-.hero-content, .hero-image {
-    position: relative;
-    z-index: 1;
 }
