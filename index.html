@@ -11,6 +11,8 @@
 
     <!-- 1. 首屏 Hero 区 -->
     <header class="hero">
+        <!-- 新增：函数动画画布 -->
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
         <div class="hero-content">
             <h1 class="hero-title">用启发式教育<br>点亮学习之路</h1>
             <p class="hero-subtitle">薛老师专注初中数学个性化辅导。拒绝题海战术，以极简的教学理念，帮助学生建立底层逻辑思维，养成终身学习习惯。</p>
@@ -55,6 +57,51 @@
             </a>
         </div>
     </footer>
+
+<!-- 新增：原生 JS 函数动画逻辑 -->
+<script>
+    const canvas = document.getElementById('hero-canvas');
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let mouseX = 0, mouseY = 0;
+
+    // 初始化与窗口大小自适应
+    function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // 监听鼠标移动，增加交互感
+    document.querySelector('.hero').addEventListener('mousemove', (e) => {
+        mouseX = e.clientX / window.innerWidth;
+        mouseY = e.clientY / window.innerHeight;
+    });
+
+    // 核心绘制逻辑
+    function drawWave(time) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#111111'; // 线条颜色，可根据主题修改
+
+        const amplitude = 50 + mouseY * 50; // 鼠标Y轴控制波浪起伏
+        const frequency = 0.005 + mouseX * 0.01; // 鼠标X轴控制波浪密集度
+        const speed = time * 0.002;
+
+        for (let x = 0; x <= canvas.width; x++) {
+            const y = canvas.height / 2 + Math.sin(x * frequency + speed) * amplitude;
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        animationFrameId = requestAnimationFrame(drawWave);
+    }
+
+    // 启动动画
+    drawWave(0);
+</script>
 
 </body>
 </html>
